@@ -1,0 +1,7 @@
+- 通过构造器或者工厂方法创建bean实例
+- 为bean的属性设置值和对其他bean的引用
+- 将bean实例传递给bean的后置处理器postProcessBeforeInitialization
+- 调用bean的初始化方法
+- 将bean实例传递给bean的后置处理器postProcessAfterInitialization
+- bean可以使用
+-当容器关闭调用destroy-method方法
