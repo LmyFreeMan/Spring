@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置bean-->
+    <bean id="helloWorld" class="com.spring.beans.HelloWorld">
+        <!--构造器-->
+<!--        <constructor-arg ref=""></constructor-arg>-->
+        <!--pojo属性注入,即通过setter方法注入bean的属性值或依赖的对象-->
+        <property name="name" value="Spring"></property>
+    </bean>
+
+
+    <!--通过构造方法来配置bean属性,可以指定参数的位置和参数的类型,区别重载-->
+    <bean id="car" class="com.spring.beans.Car">
+        <constructor-arg value="Audi" index="0"></constructor-arg>
+        <constructor-arg value="Shanghai" index="1"></constructor-arg>
+        <constructor-arg value="10" index="2"></constructor-arg>
+        <constructor-arg value="20" index="3"></constructor-arg>
+    </bean>
+
+    <bean id="car2" class="com.spring.beans.Car">
+        <constructor-arg value="baoMa" index="0" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="beijing" index="1" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="10" index="2"></constructor-arg>
+    </bean>
+
+
+    <bean id="person" class="com.spring.beans.Person">
+        <property name="name" value="Tom"></property>
+        <property name="age" value="24"></property>
+        <!-- 引用其他对象-->
+        <property name="car" ref="car"></property>
+    </bean>
+
+    <!--p空间相当于传统的配置更加简洁-->
+    <bean id="person_p" class="com.spring.beans.Person" p:age="20" p:name="30"></bean>
+</beans>
