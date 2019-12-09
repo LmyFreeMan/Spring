@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <bean id="car" class="com.spring.collections.Car">
+        <constructor-arg value="Audi" index="0"></constructor-arg>
+        <constructor-arg value="Shanghai" index="1"></constructor-arg>
+        <constructor-arg value="10" index="2"></constructor-arg>
+        <constructor-arg value="20" index="3"></constructor-arg>
+    </bean>
+
+        <!--配置list属性值-->
+
+        <bean id="person_list" class="com.spring.collections.Person_List">
+            <property name="name" value="Mike"></property>
+            <property name="age" value="27"></property>
+            <property name="cars">
+                <list>
+                    <ref bean="car" />
+                </list>
+            </property>
+        </bean>
+
+        <!--配置map属性值 -->
+
+         <bean id="person_map" class="com.spring.collections.Person_Map">
+             <property name="name" value="Rose"></property>
+             <property name="age"  value="28"></property>
+             <property name="cars">
+                 <map>
+                     <entry key="AA" value-ref="car"></entry>
+                     <entry key="BB" value-ref="car"></entry>
+                 </map>
+             </property>
+         </bean>
+
+        <!--配置properties属性值-->
+         <bean id="dataSource" class="com.spring.collections.DataSource">
+             <property name="properties">
+                    <props>
+                        <prop key="user">root</prop>
+                        <prop key="password">1234</prop>
+                        <prop key="jdbcUrl">jdbc:mysql</prop>
+                        <prop key="driveClass">com.mysql.jdbc</prop>
+                    </props>
+
+             </property>
+         </bean>
+
+
+</beans>
