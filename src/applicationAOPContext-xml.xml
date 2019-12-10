@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--配置bean-->
+    <bean id="artihmeticCalculator" class="com.spring.aop.impl.AtithmeticCalculatorImpl"></bean>
+    <!--配置切面的bean-->
+    <bean id="LoggingAspect" class="com.spring.aop.impl.LoggingAspect"></bean>
+    <bean id="vlidationAspect" class="com.spring.aop.impl.VlidationAspect"></bean>
+    <!-- 配置AOP-->
+    <aop:config>
+        <aop:pointcut id="poincut" expression="execution(public int com.spring.aop.impl.*.*(..))"/>
+        <aop:aspect ref="loggingAspect" order="2">
+            <aop:before method="beforeMethod" pointcut-ref="poincut"></aop:before>
+            <aop:after method="afterMethod" pointcut-ref="poincut"></aop:after>
+            <aop:after-throwing method="afterThrowing" pointcut-ref="poincut" throwing="e"></aop:after-throwing>
+            <aop:after-returning method="afterReturuing" pointcut-ref="poincut" returning="result"></aop:after-returning>
+            <aop:around method="aroundMethod" pointcut-ref="poincut" />
+        </aop:aspect>
+    </aop:config>
+</beans>
