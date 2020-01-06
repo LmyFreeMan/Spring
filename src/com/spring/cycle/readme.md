@@ -4,4 +4,4 @@
 - 调用bean的初始化方法
 - 将bean实例传递给bean的后置处理器postProcessAfterInitialization
 - bean可以使用
--当容器关闭调用destroy-method方法
+-当容器关闭调用destroy-method方法 
