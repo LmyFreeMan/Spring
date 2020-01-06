@@ -1,11 +1,9 @@
 package com.spring.test;
-
 import com.spring.spel.Address;
 import com.spring.spel.Car;
 import com.spring.spel.Person;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 public class Test_Spel {
     public static void main(String[] args) {
         //1.创建Spring的IOC容器对象
