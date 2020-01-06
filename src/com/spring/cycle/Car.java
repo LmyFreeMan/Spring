@@ -2,7 +2,7 @@ package com.spring.cycle;
 
 public class Car {
     public Car() {
-        System.out.println("Car's Constructor ");
+        System.out.println("Car's Constructor  ");
     }
     private String brand;
 
