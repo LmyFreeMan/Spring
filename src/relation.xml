@@ -6,6 +6,7 @@
 
     <bean id="address" class="com.spring.autowire.Address" p:city="Beijing" p:street="WuDaoKou" ></bean>
     <!-- bean的继承配置,若不希望继承，则abstract="true" autowire,abstract则不会被继承-->
-    <bean id="address2" class="com.spring.autowire.Address" p:city="Beijing" p:street="DaZhongSi" parent="address"></bean>
+    <bean id="address2" class="com.spring.autowire.Address"  parent="address"></bean>
+
 
 </beans>
