@@ -5,10 +5,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Test_Ration {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         ApplicationContext ctx=new ClassPathXmlApplicationContext("relation.xml");
-        Address address= (Address) ctx.getBean("address");
+        Address address= (Address) ctx.getBean("address2");
         System.out.println(address);
-
     }
 }
