@@ -9,7 +9,7 @@ public class Test_Cycle {
         ClassPathXmlApplicationContext ctx=new ClassPathXmlApplicationContext("bean-cycle.xml");
         Car car= (Car) ctx.getBean("car");
         System.out.println(car);
-        //关闭ioc容器
+        // 关闭ioc容器
         ctx.close();
 
     }
