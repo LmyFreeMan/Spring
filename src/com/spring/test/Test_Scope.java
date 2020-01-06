@@ -3,7 +3,6 @@ package com.spring.test;
 import com.spring.autowire.Car;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 public class Test_Scope {
     public static void main(String[] args) {
         //1.创建Spring的IOC容器对象
