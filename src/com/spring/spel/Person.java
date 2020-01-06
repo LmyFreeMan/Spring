@@ -1,6 +1,4 @@
 package com.spring.spel;
-
-
 public class Person {
     private String name;
     private Car car;

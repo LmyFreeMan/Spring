@@ -1,9 +1,7 @@
 package com.spring.spel;
-
 public class Address {
     private String city;
     private String street;
-
     @Override
     public String toString() {
         return "Address{" +

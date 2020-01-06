@@ -1,5 +1,4 @@
 package com.spring.spel;
-
 public class Car {
     private String brand;
     private double price;
