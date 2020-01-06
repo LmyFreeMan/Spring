@@ -2,7 +2,7 @@ package com.spring.autowire;
 
 
 
-public class Person {
+public class Person  {
     private String name;
     private Address address;
     private Car car;

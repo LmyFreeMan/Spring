@@ -1,6 +1,6 @@
 package com.spring.autowire;
 
-public class Car {
+public class Car  {
     private String brand;
     private double price;
 
