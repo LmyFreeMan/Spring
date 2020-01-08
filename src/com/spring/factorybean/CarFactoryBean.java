@@ -4,15 +4,7 @@ import com.spring.factory.Car;
 import org.springframework.beans.factory.FactoryBean;
 //自定义的FactoryBean需要实现FactoryBean接口
 public class CarFactoryBean implements FactoryBean<Car> {
-    public String getBrand() {
-        return brand;
-    }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    private String brand;
 
     //返回bean的对象
     @Override
