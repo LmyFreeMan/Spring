@@ -9,23 +9,25 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 import java.util.List;
 
-//把这个类声明一个切面:需要把该类放到ioc容器中，再声明一个切面
+//把这个类声明一个切面:需要把该类放到ioc容器中(@Component)，再声明一个切面(@Aspect)
 @Order(2)
 @Aspect
 @Component
 public class LoggingAspect {
     //定义一个方法,用于声明切入点表达式,一般地,该方法不需要添加其他代码
 	//使用@Pointcut来引入切片表达式
-    @Pointcut("execution(public int com.spring.aop.impl.*.*(..))")
-    public void declareJointPointExpression(){
-
-    }
+//    @Pointcut("execution(public int com.spring.aop.impl.*.*(..))")
+//    public void declareJointPointExpression(){
+//
+//    }
     //声明该方法是一个前置通知:在目标方法开始之前执行
-    @Before("declareJointPointExpression()")
+   // @Before("declareJointPointExpression()")
     //所有方法都起作用
-    //@Before("execution(public int com.spring.aop.impl.AtithmeticCalculator.*(int,int))")
+    @Before("execution(public int com.spring.aop.impl.AtithmeticCalculator.*(int,int))")
     public void beforeMethod(JoinPoint joinPoint){
+       //得到方法名字
         String methodName=joinPoint.getSignature().getName();
+        //得到参数
         List<Object> args= Arrays.asList(joinPoint.getArgs());
         System.out.println("The method "+methodName+"Begin with "+args);
     }
@@ -61,6 +63,7 @@ public class LoggingAspect {
             //前置通知
             System.out.println("进入前置通知");
             System.out.println("The method"+methodName + "begin with" + Arrays.asList(pjd.getArgs()));
+                //执行目标方法
            result=pjd.proceed();
            //后置通知
             System.out.println("进入后置通知");
