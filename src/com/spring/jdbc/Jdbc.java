@@ -51,8 +51,6 @@ public class Jdbc {
         employee.setDeptId(2);
         SqlParameterSource parameterSource=new BeanPropertySqlParameterSource(employee);
         namedParameterJdbcTemplate.update(sql,parameterSource);
-
-
     }
     //更新一条记录
     @Test
