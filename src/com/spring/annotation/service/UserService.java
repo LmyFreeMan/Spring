@@ -6,10 +6,10 @@ import org.springframework.stereotype.Service;
 //模拟业务层
 @Service
 public class UserService {
-    @Autowired
-    private UserRepository userRepository;
+//    @Autowired
+//    private UserRepository userRepository;
     public void add(){
         System.out.println("UserService add ...");
-        userRepository.save();
+     //   userRepository.save();
     }
 }
