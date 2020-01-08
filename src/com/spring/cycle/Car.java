@@ -1,8 +1,8 @@
 package com.spring.cycle;
-
+import jdk.management.resource.internal.inst.InitInstrumentation;
 public class Car {
     public Car() {
-        System.out.println("Car's Constructor  ");
+        System.out.println("car's construcor,行号是5");
     }
     private String brand;
 
