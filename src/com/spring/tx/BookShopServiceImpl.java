@@ -3,6 +3,8 @@ package com.spring.tx;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
+
+
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,7 +13,12 @@ public class BookShopServiceImpl implements BookShopService {
     @Autowired
     private BookShopDao bookShopDao;
     //添加事务注解
-    @Transactional()
+    @Transactional(
+            //事务的传播行为
+            propagation = Propagation.REQUIRED,
+            //事务的隔离级别
+            isolation = Isolation.READ_COMMITTED
+    )
     @Override
     public void purchase(String username, String number) {
         //1.获取书的单价
