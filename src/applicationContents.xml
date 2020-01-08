@@ -45,9 +45,6 @@
                         <prop key="jdbcUrl">jdbc:mysql</prop>
                         <prop key="driveClass">com.mysql.jdbc</prop>
                     </props>
-
              </property>
          </bean>
-
-
 </beans>
